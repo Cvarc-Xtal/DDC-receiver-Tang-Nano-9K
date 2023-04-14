@@ -1,0 +1,121 @@
+//
+//Written by GowinSynthesis
+//Product Version "GowinSynthesis V1.9.8.09"
+//Thu Apr  6 09:03:51 2023
+
+//Source file index table:
+//file0 "\/home/tvl/Gowin/IDE/ipcore/RAMBasedShiftRegister/data/RAM_based_shift_reg_top.v"
+//file1 "\/home/tvl/Gowin/IDE/ipcore/RAMBasedShiftRegister/data/RAM_based_shift_reg.v"
+`timescale 100 ps/100 ps
+`pragma protect begin_protected
+`pragma protect version="2.1"
+`pragma protect author="default"
+`pragma protect author_info="default"
+`pragma protect encrypt_agent="GOWIN"
+`pragma protect encrypt_agent_info="GOWIN Encrypt Version 2.1"
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=256)
+`pragma protect key_keyowner="GOWIN",key_keyname="GWK2021-10",key_method="rsa"
+`pragma protect key_block
+mKRMiiXKAQhUZdcfsGuzu30bZ94onp9l6jjPqwQccPN87YA0Ovn0PmvJaNpMXfHH/VafbZNyUST1
+5Iyle1/GT9JQLUXG7RksyCssZ3cGhGwy/SQYdzSOrDmtr+vYQJd4Q1/kKJeJQONVjO3TQIrJo8Yd
+NUuEDhuSDoeCzpThJ4IhbP5qayN/J3tjKlmKrwWbEJCW+pmCsnVc0WPyWEg9OQZchbz9dz7Mfrl+
+Hsl1T1g9AThRipKCY4pH/IH2K13ch+Cd1KoDoecRzkD1g94oug5lM8HVzm9/RTabZjBz+YttshHe
+MenKZ/Cz3O4Q3DSTUMo2I2/lmOp+7yz8RaRzfA==
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=3456)
+`pragma protect data_keyowner="default-ip-vendor"
+`pragma protect data_keyname="default-ip-key"
+`pragma protect data_method="aes128-cbc"
+`pragma protect data_block
+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
+`pragma protect end_protected
+module RAM_based_shift_reg_1b (
+  clk,
+  Reset,
+  Din,
+  Q
+)
+;
+input clk;
+input Reset;
+input [0:0] Din;
+output [0:0] Q;
+wire VCC;
+wire GND;
+  \~RAM_based_shift_reg.RAM_based_shift_reg_1b  u_RAM_based_shift_reg (
+    .clk(clk),
+    .Reset(Reset),
+    .Din(Din[0]),
+    .Q(Q[0])
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* RAM_based_shift_reg_1b */

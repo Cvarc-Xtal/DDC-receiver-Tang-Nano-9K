@@ -1,0 +1,60 @@
+{
+ "Files" : [
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/clip_led.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/cordic_rx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv/gowin_clkdiv5.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv_4/gowin_clkdiv_4.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/i2c_control.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/i2s.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/reciever.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/top_rx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+   "Type" : "verilog"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "/home/tvl/Gowin/Projects/reciever/impl/temp/rtl_parser.result",
+ "Top" : "Top_rx",
+ "VerilogStd" : "verilog_2001",
+ "VhdlStd" : "vhdl_93"
+}

@@ -1,0 +1,35 @@
+Reading netlist file: "/home/tvl/Gowin/Projects/reciever/impl/gwsynthesis/reciever.vg"
+Parsing netlist file "/home/tvl/Gowin/Projects/reciever/impl/gwsynthesis/reciever.vg" completed
+Processing netlist completed
+Reading constraint file: "/home/tvl/Gowin/Projects/reciever/src/reciever.cst"
+WARN  (CT1122) : 'Reconfig' will be placed to RECONFIGN pin according to constraint, and then the signal may lead to gwCONFIG programming directly
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1117) : Can't calculate clocks' relationship between: "div4/clkdiv_inst/CLKOUT.default_gen_clk" and "i2c_strobe"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "i2c_strobe" and "div4/clkdiv_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "sck" and "decim_avail"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "i2c_strobe" and "sck"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "decim_avail" and "div4/clkdiv_inst/CLKOUT.default_gen_clk"
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "/home/tvl/Gowin/Projects/reciever/impl/pnr/reciever.power.html" completed
+Generate file "/home/tvl/Gowin/Projects/reciever/impl/pnr/reciever.pin.html" completed
+Generate file "/home/tvl/Gowin/Projects/reciever/impl/pnr/reciever.rpt.html" completed
+Generate file "/home/tvl/Gowin/Projects/reciever/impl/pnr/reciever.rpt.txt" completed
+Generate file "/home/tvl/Gowin/Projects/reciever/impl/pnr/reciever.tr.html" completed
+Fri Apr 14 15:50:06 2023
+

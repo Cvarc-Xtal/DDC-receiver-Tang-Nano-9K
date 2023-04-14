@@ -1,0 +1,14 @@
+-d /home/tvl/Gowin/Projects/reciever/impl/gwsynthesis/reciever.vg
+-p GW1NR-9C-QFN88P-6
+-pn GW1NR-LV9QN88PC6/I5
+-cst /home/tvl/Gowin/Projects/reciever/src/reciever.cst
+-cfg /home/tvl/Gowin/Projects/reciever/impl/pnr/device.cfg
+-sdc /home/tvl/Gowin/Projects/reciever/src/reciever.sdc
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-place_option 1
+-route_option 1
+-route_maxfan 23

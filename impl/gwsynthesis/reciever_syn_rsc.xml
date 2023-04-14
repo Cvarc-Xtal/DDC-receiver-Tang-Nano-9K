@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="Top_rx" Register="86" Lut="95">
+ <SubModule name="div5"/>
+ <SubModule name="div4"/>
+ <SubModule name="i2c" Register="28" Lut="66">
+  <SubModule name="sda_edge_detector" Register="4"/>
+  <SubModule name="scl_edge_detector" Register="4"/>
+ </SubModule>
+ <SubModule name="rx" Register="48" Lut="53" Dsp="1">
+  <SubModule name="rx_cordic" Register="677" Alu="1114" Lut="1022"/>
+  <SubModule name="cic_inst_I1" Register="17" Alu="15" Lut="32">
+   <SubModule name="cic_stages[0].cic_integrator_inst" Register="27" Alu="27"/>
+   <SubModule name="cic_stages[0].cic_comb_inst" Register="54" Alu="27"/>
+   <SubModule name="cic_stages[1].cic_integrator_inst" Register="27" Alu="27"/>
+   <SubModule name="cic_stages[1].cic_comb_inst" Register="54" Alu="27"/>
+   <SubModule name="cic_stages[2].cic_integrator_inst" Register="27" Alu="27"/>
+   <SubModule name="cic_stages[2].cic_comb_inst" Register="46" Alu="27"/>
+  </SubModule>
+  <SubModule name="cic_inst_Q1" Register="17" Alu="15" Lut="33">
+   <SubModule name="cic_stages[0].cic_integrator_inst" Register="27" Alu="27"/>
+   <SubModule name="cic_stages[0].cic_comb_inst" Register="54" Alu="27"/>
+   <SubModule name="cic_stages[1].cic_integrator_inst" Register="27" Alu="27"/>
+   <SubModule name="cic_stages[1].cic_comb_inst" Register="54" Alu="27"/>
+   <SubModule name="cic_stages[2].cic_integrator_inst" Register="27" Alu="27"/>
+   <SubModule name="cic_stages[2].cic_comb_inst" Register="46" Alu="27"/>
+  </SubModule>
+  <SubModule name="varcic_inst_I2" Register="35" Alu="33" Lut="8">
+   <SubModule name="cic_stages[0].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[0].cic_comb_inst" Register="70" Alu="35"/>
+   <SubModule name="cic_stages[1].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[1].cic_comb_inst" Register="70" Alu="35"/>
+   <SubModule name="cic_stages[2].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[2].cic_comb_inst" Register="70" Alu="35"/>
+   <SubModule name="cic_stages[3].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[3].cic_comb_inst" Register="70" Alu="35"/>
+   <SubModule name="cic_stages[4].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[4].cic_comb_inst" Register="54" Alu="35"/>
+  </SubModule>
+  <SubModule name="varcic_inst_Q2" Register="35" Alu="33" Lut="7">
+   <SubModule name="cic_stages[0].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[0].cic_comb_inst" Register="70" Alu="35"/>
+   <SubModule name="cic_stages[1].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[1].cic_comb_inst" Register="70" Alu="35"/>
+   <SubModule name="cic_stages[2].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[2].cic_comb_inst" Register="70" Alu="35"/>
+   <SubModule name="cic_stages[3].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[3].cic_comb_inst" Register="70" Alu="35"/>
+   <SubModule name="cic_stages[4].cic_integrator_inst" Register="35" Alu="35"/>
+   <SubModule name="cic_stages[4].cic_comb_inst" Register="54" Alu="35"/>
+  </SubModule>
+  <SubModule name="fir" Register="61" Alu="342" Lut="273">
+   <SubModule name="A" Register="90" Alu="63" Lut="22" Dsp="2">
+    <SubModule name="fir2048" Bsram="2"/>
+    <SubModule name="ram36" Lut="1" Bsram="1"/>
+   </SubModule>
+   <SubModule name="B" Register="90" Alu="63" Lut="22" Dsp="2">
+    <SubModule name="fir2048" Bsram="2"/>
+    <SubModule name="ram36" Lut="1" Bsram="1"/>
+   </SubModule>
+   <SubModule name="C" Register="90" Alu="63" Lut="22" Dsp="2">
+    <SubModule name="fir2048" Bsram="2"/>
+    <SubModule name="ram36" Lut="1" Bsram="1"/>
+   </SubModule>
+   <SubModule name="D" Register="90" Alu="63" Lut="22" Dsp="2">
+    <SubModule name="fir2048" Bsram="2"/>
+    <SubModule name="ram36" Lut="1" Bsram="1"/>
+   </SubModule>
+   <SubModule name="E" Register="90" Alu="63" Lut="22" Dsp="2">
+    <SubModule name="fir2048" Bsram="2"/>
+    <SubModule name="ram36" Lut="1" Bsram="1"/>
+   </SubModule>
+   <SubModule name="F" Register="90" Alu="63" Lut="22" Dsp="2">
+    <SubModule name="fir2048" Bsram="2"/>
+    <SubModule name="ram36" Lut="1" Bsram="1"/>
+   </SubModule>
+   <SubModule name="G" Register="90" Alu="63" Lut="22" Dsp="2">
+    <SubModule name="fir2048" Bsram="2"/>
+    <SubModule name="ram36" Lut="1" Bsram="1"/>
+   </SubModule>
+   <SubModule name="H" Register="90" Alu="63" Lut="22" Dsp="2">
+    <SubModule name="fir2048" Bsram="2"/>
+    <SubModule name="ram36" Lut="1" Bsram="1"/>
+   </SubModule>
+  </SubModule>
+ </SubModule>
+ <SubModule name="i2s" Register="56" Lut="62"/>
+</Module>

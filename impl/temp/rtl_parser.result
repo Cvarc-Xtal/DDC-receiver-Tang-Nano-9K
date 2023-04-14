@@ -1,0 +1,602 @@
+[
+ {
+  "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/clip_led.v",
+  "InstLine" : 1,
+  "InstName" : "clip_led",
+  "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/clip_led.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "clip_led"
+ },
+ {
+  "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/top_rx.v",
+  "InstLine" : 2,
+  "InstName" : "Top_rx",
+  "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/top_rx.v",
+  "ModuleLine" : 2,
+  "ModuleName" : "Top_rx",
+  "SubInsts" : [
+   {
+    "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/top_rx.v",
+    "InstLine" : 31,
+    "InstName" : "div5",
+    "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv/gowin_clkdiv5.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_CLKDIV5"
+   },
+   {
+    "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/top_rx.v",
+    "InstLine" : 37,
+    "InstName" : "div4",
+    "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv_4/gowin_clkdiv_4.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_CLKDIV4"
+   },
+   {
+    "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/top_rx.v",
+    "InstLine" : 80,
+    "InstName" : "i2c",
+    "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/i2c_control.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "i2c_slave",
+    "SubInsts" : [
+     {
+      "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/i2c_control.v",
+      "InstLine" : 27,
+      "InstName" : "sda_edge_detector",
+      "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/i2c_control.v",
+      "ModuleLine" : 225,
+      "ModuleName" : "edge_detector"
+     },
+     {
+      "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/i2c_control.v",
+      "InstLine" : 40,
+      "InstName" : "scl_edge_detector",
+      "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/i2c_control.v",
+      "ModuleLine" : 225,
+      "ModuleName" : "edge_detector"
+     }
+    ]
+   },
+   {
+    "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/top_rx.v",
+    "InstLine" : 99,
+    "InstName" : "rx",
+    "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/reciever.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "reciever",
+    "SubInsts" : [
+     {
+      "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/reciever.v",
+      "InstLine" : 30,
+      "InstName" : "rx_cordic",
+      "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cordic_rx.v",
+      "ModuleLine" : 2,
+      "ModuleName" : "cordic"
+     },
+     {
+      "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/reciever.v",
+      "InstLine" : 53,
+      "InstName" : "cic_inst_I1",
+      "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "cic",
+      "SubInsts" : [
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 62,
+        "InstName" : "cic_stages[0].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 70,
+        "InstName" : "cic_stages[0].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 62,
+        "InstName" : "cic_stages[1].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 70,
+        "InstName" : "cic_stages[1].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 62,
+        "InstName" : "cic_stages[2].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 70,
+        "InstName" : "cic_stages[2].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       }
+      ]
+     },
+     {
+      "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/reciever.v",
+      "InstLine" : 63,
+      "InstName" : "cic_inst_Q1",
+      "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "cic",
+      "SubInsts" : [
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 62,
+        "InstName" : "cic_stages[0].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 70,
+        "InstName" : "cic_stages[0].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 62,
+        "InstName" : "cic_stages[1].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 70,
+        "InstName" : "cic_stages[1].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 62,
+        "InstName" : "cic_stages[2].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "InstLine" : 70,
+        "InstName" : "cic_stages[2].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       }
+      ]
+     },
+     {
+      "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/reciever.v",
+      "InstLine" : 83,
+      "InstName" : "varcic_inst_I2",
+      "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+      "ModuleLine" : 25,
+      "ModuleName" : "varcic",
+      "SubInsts" : [
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[0].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[0].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[1].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[1].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[2].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[2].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[3].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[3].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[4].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[4].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       }
+      ]
+     },
+     {
+      "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/reciever.v",
+      "InstLine" : 94,
+      "InstName" : "varcic_inst_Q2",
+      "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+      "ModuleLine" : 25,
+      "ModuleName" : "varcic",
+      "SubInsts" : [
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[0].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[0].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[1].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[1].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[2].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[2].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[3].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[3].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 85,
+        "InstName" : "cic_stages[4].cic_integrator_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 122,
+        "ModuleName" : "cic_integrator"
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/varcic.v",
+        "InstLine" : 93,
+        "InstName" : "cic_stages[4].cic_comb_inst",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/cic.v",
+        "ModuleLine" : 96,
+        "ModuleName" : "cic_comb"
+       }
+      ]
+     },
+     {
+      "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/reciever.v",
+      "InstLine" : 107,
+      "InstName" : "fir",
+      "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+      "ModuleLine" : 51,
+      "ModuleName" : "firX8R8",
+      "SubInsts" : [
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "InstLine" : 152,
+        "InstName" : "A",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "ModuleLine" : 171,
+        "ModuleName" : "fir256",
+        "SubInsts" : [
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 204,
+          "InstName" : "fir2048",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+          "ModuleLine" : 9,
+          "ModuleName" : "Gowin_pROM_2048"
+         },
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 212,
+          "InstName" : "ram36",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "ModuleLine" : 265,
+          "ModuleName" : "ram36x256"
+         }
+        ]
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "InstLine" : 153,
+        "InstName" : "B",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "ModuleLine" : 171,
+        "ModuleName" : "fir256",
+        "SubInsts" : [
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 204,
+          "InstName" : "fir2048",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+          "ModuleLine" : 9,
+          "ModuleName" : "Gowin_pROM_2048"
+         },
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 212,
+          "InstName" : "ram36",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "ModuleLine" : 265,
+          "ModuleName" : "ram36x256"
+         }
+        ]
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "InstLine" : 154,
+        "InstName" : "C",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "ModuleLine" : 171,
+        "ModuleName" : "fir256",
+        "SubInsts" : [
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 204,
+          "InstName" : "fir2048",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+          "ModuleLine" : 9,
+          "ModuleName" : "Gowin_pROM_2048"
+         },
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 212,
+          "InstName" : "ram36",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "ModuleLine" : 265,
+          "ModuleName" : "ram36x256"
+         }
+        ]
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "InstLine" : 155,
+        "InstName" : "D",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "ModuleLine" : 171,
+        "ModuleName" : "fir256",
+        "SubInsts" : [
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 204,
+          "InstName" : "fir2048",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+          "ModuleLine" : 9,
+          "ModuleName" : "Gowin_pROM_2048"
+         },
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 212,
+          "InstName" : "ram36",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "ModuleLine" : 265,
+          "ModuleName" : "ram36x256"
+         }
+        ]
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "InstLine" : 156,
+        "InstName" : "E",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "ModuleLine" : 171,
+        "ModuleName" : "fir256",
+        "SubInsts" : [
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 204,
+          "InstName" : "fir2048",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+          "ModuleLine" : 9,
+          "ModuleName" : "Gowin_pROM_2048"
+         },
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 212,
+          "InstName" : "ram36",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "ModuleLine" : 265,
+          "ModuleName" : "ram36x256"
+         }
+        ]
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "InstLine" : 157,
+        "InstName" : "F",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "ModuleLine" : 171,
+        "ModuleName" : "fir256",
+        "SubInsts" : [
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 204,
+          "InstName" : "fir2048",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+          "ModuleLine" : 9,
+          "ModuleName" : "Gowin_pROM_2048"
+         },
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 212,
+          "InstName" : "ram36",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "ModuleLine" : 265,
+          "ModuleName" : "ram36x256"
+         }
+        ]
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "InstLine" : 158,
+        "InstName" : "G",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "ModuleLine" : 171,
+        "ModuleName" : "fir256",
+        "SubInsts" : [
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 204,
+          "InstName" : "fir2048",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+          "ModuleLine" : 9,
+          "ModuleName" : "Gowin_pROM_2048"
+         },
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 212,
+          "InstName" : "ram36",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "ModuleLine" : 265,
+          "ModuleName" : "ram36x256"
+         }
+        ]
+       },
+       {
+        "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "InstLine" : 159,
+        "InstName" : "H",
+        "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+        "ModuleLine" : 171,
+        "ModuleName" : "fir256",
+        "SubInsts" : [
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 204,
+          "InstName" : "fir2048",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v",
+          "ModuleLine" : 9,
+          "ModuleName" : "Gowin_pROM_2048"
+         },
+         {
+          "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "InstLine" : 212,
+          "InstName" : "ram36",
+          "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/firx8x8.v",
+          "ModuleLine" : 265,
+          "ModuleName" : "ram36x256"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "/home/tvl/Gowin/Projects/reciever/src/top_rx.v",
+    "InstLine" : 103,
+    "InstName" : "i2s",
+    "ModuleFile" : "/home/tvl/Gowin/Projects/reciever/src/i2s.v",
+    "ModuleLine" : 2,
+    "ModuleName" : "i2s_module"
+   }
+  ]
+ }
+]

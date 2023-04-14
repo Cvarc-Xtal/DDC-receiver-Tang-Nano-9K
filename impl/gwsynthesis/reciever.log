@@ -1,0 +1,71 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/cic.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/clip_led.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/cordic_rx.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/firx8x8.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv/gowin_clkdiv5.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv_4/gowin_clkdiv_4.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/i2c_control.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/i2s.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/reciever.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/top_rx.v'
+Analyzing Verilog file '/home/tvl/Gowin/Projects/reciever/src/varcic.v'
+Compiling module 'Top_rx'("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":2)
+Compiling module 'Gowin_CLKDIV5'("/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv/gowin_clkdiv5.v":9)
+Compiling module 'Gowin_CLKDIV4'("/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv_4/gowin_clkdiv_4.v":9)
+Compiling module 'i2c_slave'("/home/tvl/Gowin/Projects/reciever/src/i2c_control.v":1)
+Compiling module 'edge_detector(N=4)'("/home/tvl/Gowin/Projects/reciever/src/i2c_control.v":225)
+Compiling module 'reciever'("/home/tvl/Gowin/Projects/reciever/src/reciever.v":1)
+Compiling module 'cordic'("/home/tvl/Gowin/Projects/reciever/src/cordic_rx.v":2)
+Compiling module 'cic(ACC_WIDTH=27,OUT_WIDTH=18)'("/home/tvl/Gowin/Projects/reciever/src/cic.v":1)
+Compiling module 'cic_integrator(WIDTH=27)'("/home/tvl/Gowin/Projects/reciever/src/cic.v":122)
+Compiling module 'cic_comb(WIDTH=27)'("/home/tvl/Gowin/Projects/reciever/src/cic.v":96)
+Compiling module 'varcic'("/home/tvl/Gowin/Projects/reciever/src/varcic.v":25)
+Compiling module 'cic_integrator(WIDTH=45)'("/home/tvl/Gowin/Projects/reciever/src/cic.v":122)
+Compiling module 'cic_comb(WIDTH=45)'("/home/tvl/Gowin/Projects/reciever/src/cic.v":96)
+Compiling module 'firX8R8'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":51)
+Compiling module 'fir256(BEGIN_COEFF=11'd0,ABITS=24,TAPS=122)'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":171)
+Compiling module 'Gowin_pROM_2048'("/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v":9)
+Compiling module 'ram36x256'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":265)
+Extracting RAM for identifier 'bram'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":274)
+Compiling module 'fir256(BEGIN_COEFF=11'd256,ABITS=24,TAPS=122)'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":171)
+Compiling module 'fir256(BEGIN_COEFF=11'd512,ABITS=24,TAPS=122)'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":171)
+Compiling module 'fir256(BEGIN_COEFF=11'd768,ABITS=24,TAPS=122)'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":171)
+Compiling module 'fir256(BEGIN_COEFF=11'd1024,ABITS=24,TAPS=122)'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":171)
+Compiling module 'fir256(BEGIN_COEFF=11'd1280,ABITS=24,TAPS=122)'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":171)
+Compiling module 'fir256(BEGIN_COEFF=11'd1536,ABITS=24,TAPS=122)'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":171)
+Compiling module 'fir256(BEGIN_COEFF=11'd1792,ABITS=24,TAPS=122)'("/home/tvl/Gowin/Projects/reciever/src/firx8x8.v":171)
+Compiling module 'i2s_module'("/home/tvl/Gowin/Projects/reciever/src/i2s.v":2)
+WARN  (EX1947) : Input port 'data_rd[7]' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+WARN  (EX1947) : Input port 'data_rd[6]' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+WARN  (EX1947) : Input port 'data_rd[5]' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+WARN  (EX1947) : Input port 'data_rd[4]' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+WARN  (EX1947) : Input port 'data_rd[3]' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+WARN  (EX1947) : Input port 'data_rd[2]' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+WARN  (EX1947) : Input port 'data_rd[1]' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+WARN  (EX1947) : Input port 'data_rd[0]' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+WARN  (EX1947) : Input port 'rd_tick' remains unconnected for this instance("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":91)
+NOTE  (EX0101) : Current top module is "Top_rx"
+WARN  (EX0211) : The output port "test" of module "Top_rx" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":25)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input adc_overrange is unused("/home/tvl/Gowin/Projects/reciever/src/top_rx.v":7)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "/home/tvl/Gowin/Projects/reciever/impl/gwsynthesis/reciever.vg" completed
+[100%] Generate report file "/home/tvl/Gowin/Projects/reciever/impl/gwsynthesis/reciever_syn.rpt.html" completed
+GowinSynthesis finish

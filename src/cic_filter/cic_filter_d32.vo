@@ -1,0 +1,2764 @@
+//Copyright (C)2014-2022 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Post-PnR Simulation Model file
+//GOWIN Version: V1.9.8.09
+//Created Time: Fri Apr  7 10:41:40 2023
+
+`timescale 100 ps/100 ps
+module CIC_Filter_d32(
+	clk,
+	rstn,
+	in_valid,
+	in_data,
+	out_valid,
+	out_data
+);
+input clk;
+input rstn;
+input in_valid;
+input [17:0] in_data;
+output out_valid;
+output [47:0] out_data;
+wire GND;
+wire VCC;
+wire clk;
+wire [17:0] in_data;
+wire in_valid;
+wire [47:0] out_data;
+wire out_valid;
+wire rstn;
+wire \CIC_Filter/n6_6 ;
+wire \CIC_Filter/down_vaild ;
+wire [47:0] \CIC_Filter/inte_data[0] ;
+wire [47:0] \CIC_Filter/inte_data[1] ;
+wire [47:0] \CIC_Filter/inte_data[2] ;
+wire [47:0] \CIC_Filter/inte_data[3] ;
+wire [4:4] \CIC_Filter/inte_vaild ;
+wire [47:0] \CIC_Filter/inte_data[4] ;
+wire [47:0] \CIC_Filter/down_out ;
+wire [0:0] \CIC_Filter/comb_vaild ;
+wire [47:0] \CIC_Filter/comb_data[0] ;
+wire [1:1] \CIC_Filter/comb_vaild_0 ;
+wire [47:0] \CIC_Filter/comb_data[1] ;
+wire [2:2] \CIC_Filter/comb_vaild_1 ;
+wire [47:0] \CIC_Filter/comb_data[2] ;
+wire [3:3] \CIC_Filter/comb_vaild_2 ;
+wire [47:0] \CIC_Filter/comb_data[3] ;
+wire [53:48] \CIC_Filter/integrator[0].integrator_inst/DOUT ;
+wire [54:0] \CIC_Filter/integrator[0].integrator_inst/CASO ;
+wire [53:48] \CIC_Filter/integrator[1].integrator_inst/DOUT ;
+wire [54:0] \CIC_Filter/integrator[1].integrator_inst/CASO ;
+wire [53:48] \CIC_Filter/integrator[2].integrator_inst/DOUT ;
+wire [54:0] \CIC_Filter/integrator[2].integrator_inst/CASO ;
+wire [53:48] \CIC_Filter/integrator[3].integrator_inst/DOUT ;
+wire [54:0] \CIC_Filter/integrator[3].integrator_inst/CASO ;
+wire [53:48] \CIC_Filter/integrator[4].integrator_inst/DOUT ;
+wire [54:0] \CIC_Filter/integrator[4].integrator_inst/CASO ;
+wire \CIC_Filter/down_sample_inst/n58_5 ;
+wire \CIC_Filter/down_sample_inst/n18_9 ;
+wire \CIC_Filter/down_sample_inst/n21_9 ;
+wire \CIC_Filter/down_sample_inst/n58_9 ;
+wire \CIC_Filter/down_sample_inst/n20_10 ;
+wire \CIC_Filter/down_sample_inst/n19_9 ;
+wire \CIC_Filter/down_sample_inst/n22_10 ;
+wire [4:0] \CIC_Filter/down_sample_inst/cnt ;
+wire [47:0] \CIC_Filter/comb[0].comb_inst/buff_delay[0] ;
+wire [53:48] \CIC_Filter/comb[0].comb_inst/DOUT ;
+wire [54:0] \CIC_Filter/comb[0].comb_inst/CASO ;
+wire [47:0] \CIC_Filter/comb[1].comb_inst/buff_delay[0] ;
+wire [53:48] \CIC_Filter/comb[1].comb_inst/DOUT ;
+wire [54:0] \CIC_Filter/comb[1].comb_inst/CASO ;
+wire [47:0] \CIC_Filter/comb[2].comb_inst/buff_delay[0] ;
+wire [53:48] \CIC_Filter/comb[2].comb_inst/DOUT ;
+wire [54:0] \CIC_Filter/comb[2].comb_inst/CASO ;
+wire [47:0] \CIC_Filter/comb[3].comb_inst/buff_delay[0] ;
+wire [53:48] \CIC_Filter/comb[3].comb_inst/DOUT ;
+wire [54:0] \CIC_Filter/comb[3].comb_inst/CASO ;
+wire [47:0] \CIC_Filter/comb[4].comb_inst/buff_delay[0] ;
+wire [53:48] \CIC_Filter/comb[4].comb_inst/DOUT ;
+wire [54:0] \CIC_Filter/comb[4].comb_inst/CASO ;
+VCC VCC_cZ (
+  .V(VCC)
+);
+GND GND_cZ (
+  .G(GND)
+);
+GSR GSR (
+	.GSRI(VCC)
+);
+ALU54D \CIC_Filter/integrator[0].integrator_inst/add_7_s1  (
+	.ASIGN(VCC),
+	.BSIGN(VCC),
+	.ACCLOAD(GND),
+	.CE(in_valid),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17], in_data[17:0]}),
+	.B({\CIC_Filter/inte_data[0] [47], \CIC_Filter/inte_data[0] [47], \CIC_Filter/inte_data[0] [47], \CIC_Filter/inte_data[0] [47], \CIC_Filter/inte_data[0] [47], \CIC_Filter/inte_data[0] [47], \CIC_Filter/inte_data[0] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/integrator[0].integrator_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/integrator[0].integrator_inst/DOUT [53:48], \CIC_Filter/inte_data[0] [47:0]})
+);
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .AREG=1'b0;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .BREG=1'b0;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .OUT_REG=1'b1;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .B_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .ALUD_MODE=0;
+defparam \CIC_Filter/integrator[0].integrator_inst/add_7_s1 .ALU_RESET_MODE="ASYNC";
+LUT1 \CIC_Filter/integrator[0].integrator_inst/n6_s2  (
+	.I0(rstn),
+	.F(\CIC_Filter/n6_6 )
+);
+defparam \CIC_Filter/integrator[0].integrator_inst/n6_s2 .INIT=2'h1;
+ALU54D \CIC_Filter/integrator[1].integrator_inst/add_7_s1  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(in_valid),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/inte_data[0] [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/inte_data[1] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/integrator[1].integrator_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/integrator[1].integrator_inst/DOUT [53:48], \CIC_Filter/inte_data[1] [47:0]})
+);
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .AREG=1'b0;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .BREG=1'b0;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .OUT_REG=1'b1;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .B_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .ALUD_MODE=0;
+defparam \CIC_Filter/integrator[1].integrator_inst/add_7_s1 .ALU_RESET_MODE="ASYNC";
+ALU54D \CIC_Filter/integrator[2].integrator_inst/add_7_s1  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(in_valid),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/inte_data[1] [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/inte_data[2] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/integrator[2].integrator_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/integrator[2].integrator_inst/DOUT [53:48], \CIC_Filter/inte_data[2] [47:0]})
+);
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .AREG=1'b0;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .BREG=1'b0;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .OUT_REG=1'b1;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .B_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .ALUD_MODE=0;
+defparam \CIC_Filter/integrator[2].integrator_inst/add_7_s1 .ALU_RESET_MODE="ASYNC";
+ALU54D \CIC_Filter/integrator[3].integrator_inst/add_7_s1  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(in_valid),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/inte_data[2] [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/inte_data[3] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/integrator[3].integrator_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/integrator[3].integrator_inst/DOUT [53:48], \CIC_Filter/inte_data[3] [47:0]})
+);
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .AREG=1'b0;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .BREG=1'b0;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .OUT_REG=1'b1;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .B_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .ALUD_MODE=0;
+defparam \CIC_Filter/integrator[3].integrator_inst/add_7_s1 .ALU_RESET_MODE="ASYNC";
+DFFC \CIC_Filter/integrator[4].integrator_inst/out_valid_s0  (
+	.D(in_valid),
+	.CLK(clk),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/inte_vaild [4])
+);
+defparam \CIC_Filter/integrator[4].integrator_inst/out_valid_s0 .INIT=1'b0;
+ALU54D \CIC_Filter/integrator[4].integrator_inst/add_7_s1  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(in_valid),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/inte_data[3] [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/inte_data[4] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/integrator[4].integrator_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/integrator[4].integrator_inst/DOUT [53:48], \CIC_Filter/inte_data[4] [47:0]})
+);
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .AREG=1'b0;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .BREG=1'b0;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .OUT_REG=1'b1;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .B_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .ALUD_MODE=0;
+defparam \CIC_Filter/integrator[4].integrator_inst/add_7_s1 .ALU_RESET_MODE="ASYNC";
+LUT4 \CIC_Filter/down_sample_inst/n58_s1  (
+	.I0(\CIC_Filter/down_sample_inst/cnt [0]),
+	.I1(\CIC_Filter/down_sample_inst/cnt [1]),
+	.I2(\CIC_Filter/down_sample_inst/cnt [2]),
+	.I3(\CIC_Filter/down_sample_inst/cnt [3]),
+	.F(\CIC_Filter/down_sample_inst/n58_5 )
+);
+defparam \CIC_Filter/down_sample_inst/n58_s1 .INIT=16'h8000;
+LUT2 \CIC_Filter/down_sample_inst/n18_s3  (
+	.I0(\CIC_Filter/down_sample_inst/cnt [4]),
+	.I1(\CIC_Filter/down_sample_inst/n58_5 ),
+	.F(\CIC_Filter/down_sample_inst/n18_9 )
+);
+defparam \CIC_Filter/down_sample_inst/n18_s3 .INIT=4'h6;
+LUT2 \CIC_Filter/down_sample_inst/n21_s3  (
+	.I0(\CIC_Filter/down_sample_inst/cnt [0]),
+	.I1(\CIC_Filter/down_sample_inst/cnt [1]),
+	.F(\CIC_Filter/down_sample_inst/n21_9 )
+);
+defparam \CIC_Filter/down_sample_inst/n21_s3 .INIT=4'h6;
+LUT3 \CIC_Filter/down_sample_inst/n58_s3  (
+	.I0(\CIC_Filter/down_sample_inst/cnt [4]),
+	.I1(\CIC_Filter/inte_vaild [4]),
+	.I2(\CIC_Filter/down_sample_inst/n58_5 ),
+	.F(\CIC_Filter/down_sample_inst/n58_9 )
+);
+defparam \CIC_Filter/down_sample_inst/n58_s3 .INIT=8'h80;
+LUT3 \CIC_Filter/down_sample_inst/n20_s4  (
+	.I0(\CIC_Filter/down_sample_inst/cnt [2]),
+	.I1(\CIC_Filter/down_sample_inst/cnt [0]),
+	.I2(\CIC_Filter/down_sample_inst/cnt [1]),
+	.F(\CIC_Filter/down_sample_inst/n20_10 )
+);
+defparam \CIC_Filter/down_sample_inst/n20_s4 .INIT=8'h6A;
+LUT4 \CIC_Filter/down_sample_inst/n19_s3  (
+	.I0(\CIC_Filter/down_sample_inst/cnt [2]),
+	.I1(\CIC_Filter/down_sample_inst/cnt [0]),
+	.I2(\CIC_Filter/down_sample_inst/cnt [1]),
+	.I3(\CIC_Filter/down_sample_inst/cnt [3]),
+	.F(\CIC_Filter/down_sample_inst/n19_9 )
+);
+defparam \CIC_Filter/down_sample_inst/n19_s3 .INIT=16'h7F80;
+DFFCE \CIC_Filter/down_sample_inst/cnt_4_s0  (
+	.D(\CIC_Filter/down_sample_inst/n18_9 ),
+	.CLK(clk),
+	.CE(\CIC_Filter/inte_vaild [4]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_sample_inst/cnt [4])
+);
+defparam \CIC_Filter/down_sample_inst/cnt_4_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/cnt_3_s0  (
+	.D(\CIC_Filter/down_sample_inst/n19_9 ),
+	.CLK(clk),
+	.CE(\CIC_Filter/inte_vaild [4]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_sample_inst/cnt [3])
+);
+defparam \CIC_Filter/down_sample_inst/cnt_3_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/cnt_2_s0  (
+	.D(\CIC_Filter/down_sample_inst/n20_10 ),
+	.CLK(clk),
+	.CE(\CIC_Filter/inte_vaild [4]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_sample_inst/cnt [2])
+);
+defparam \CIC_Filter/down_sample_inst/cnt_2_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/cnt_1_s0  (
+	.D(\CIC_Filter/down_sample_inst/n21_9 ),
+	.CLK(clk),
+	.CE(\CIC_Filter/inte_vaild [4]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_sample_inst/cnt [1])
+);
+defparam \CIC_Filter/down_sample_inst/cnt_1_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/cnt_0_s0  (
+	.D(\CIC_Filter/down_sample_inst/n22_10 ),
+	.CLK(clk),
+	.CE(\CIC_Filter/inte_vaild [4]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_sample_inst/cnt [0])
+);
+defparam \CIC_Filter/down_sample_inst/cnt_0_s0 .INIT=1'b0;
+DFFC \CIC_Filter/down_sample_inst/out_valid_s0  (
+	.D(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLK(clk),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_vaild )
+);
+defparam \CIC_Filter/down_sample_inst/out_valid_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_47_s0  (
+	.D(\CIC_Filter/inte_data[4] [47]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [47])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_47_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_46_s0  (
+	.D(\CIC_Filter/inte_data[4] [46]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [46])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_46_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_45_s0  (
+	.D(\CIC_Filter/inte_data[4] [45]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [45])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_45_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_44_s0  (
+	.D(\CIC_Filter/inte_data[4] [44]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [44])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_44_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_43_s0  (
+	.D(\CIC_Filter/inte_data[4] [43]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [43])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_43_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_42_s0  (
+	.D(\CIC_Filter/inte_data[4] [42]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [42])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_42_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_41_s0  (
+	.D(\CIC_Filter/inte_data[4] [41]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [41])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_41_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_40_s0  (
+	.D(\CIC_Filter/inte_data[4] [40]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [40])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_40_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_39_s0  (
+	.D(\CIC_Filter/inte_data[4] [39]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [39])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_39_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_38_s0  (
+	.D(\CIC_Filter/inte_data[4] [38]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [38])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_38_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_37_s0  (
+	.D(\CIC_Filter/inte_data[4] [37]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [37])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_37_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_36_s0  (
+	.D(\CIC_Filter/inte_data[4] [36]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [36])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_36_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_35_s0  (
+	.D(\CIC_Filter/inte_data[4] [35]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [35])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_35_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_34_s0  (
+	.D(\CIC_Filter/inte_data[4] [34]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [34])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_34_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_33_s0  (
+	.D(\CIC_Filter/inte_data[4] [33]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [33])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_33_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_32_s0  (
+	.D(\CIC_Filter/inte_data[4] [32]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [32])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_32_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_31_s0  (
+	.D(\CIC_Filter/inte_data[4] [31]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [31])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_31_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_30_s0  (
+	.D(\CIC_Filter/inte_data[4] [30]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [30])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_30_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_29_s0  (
+	.D(\CIC_Filter/inte_data[4] [29]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [29])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_29_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_28_s0  (
+	.D(\CIC_Filter/inte_data[4] [28]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [28])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_28_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_27_s0  (
+	.D(\CIC_Filter/inte_data[4] [27]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [27])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_27_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_26_s0  (
+	.D(\CIC_Filter/inte_data[4] [26]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [26])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_26_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_25_s0  (
+	.D(\CIC_Filter/inte_data[4] [25]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [25])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_25_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_24_s0  (
+	.D(\CIC_Filter/inte_data[4] [24]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [24])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_24_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_23_s0  (
+	.D(\CIC_Filter/inte_data[4] [23]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [23])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_23_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_22_s0  (
+	.D(\CIC_Filter/inte_data[4] [22]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [22])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_22_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_21_s0  (
+	.D(\CIC_Filter/inte_data[4] [21]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [21])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_21_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_20_s0  (
+	.D(\CIC_Filter/inte_data[4] [20]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [20])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_20_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_19_s0  (
+	.D(\CIC_Filter/inte_data[4] [19]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [19])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_19_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_18_s0  (
+	.D(\CIC_Filter/inte_data[4] [18]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [18])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_18_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_17_s0  (
+	.D(\CIC_Filter/inte_data[4] [17]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [17])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_17_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_16_s0  (
+	.D(\CIC_Filter/inte_data[4] [16]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [16])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_16_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_15_s0  (
+	.D(\CIC_Filter/inte_data[4] [15]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [15])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_15_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_14_s0  (
+	.D(\CIC_Filter/inte_data[4] [14]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [14])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_14_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_13_s0  (
+	.D(\CIC_Filter/inte_data[4] [13]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [13])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_13_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_12_s0  (
+	.D(\CIC_Filter/inte_data[4] [12]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [12])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_12_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_11_s0  (
+	.D(\CIC_Filter/inte_data[4] [11]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [11])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_11_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_10_s0  (
+	.D(\CIC_Filter/inte_data[4] [10]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [10])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_10_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_9_s0  (
+	.D(\CIC_Filter/inte_data[4] [9]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [9])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_9_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_8_s0  (
+	.D(\CIC_Filter/inte_data[4] [8]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [8])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_8_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_7_s0  (
+	.D(\CIC_Filter/inte_data[4] [7]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [7])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_7_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_6_s0  (
+	.D(\CIC_Filter/inte_data[4] [6]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [6])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_6_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_5_s0  (
+	.D(\CIC_Filter/inte_data[4] [5]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [5])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_5_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_4_s0  (
+	.D(\CIC_Filter/inte_data[4] [4]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [4])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_4_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_3_s0  (
+	.D(\CIC_Filter/inte_data[4] [3]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [3])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_3_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_2_s0  (
+	.D(\CIC_Filter/inte_data[4] [2]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [2])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_2_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_1_s0  (
+	.D(\CIC_Filter/inte_data[4] [1]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [1])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_1_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/down_sample_inst/buffer_out_0_s0  (
+	.D(\CIC_Filter/inte_data[4] [0]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_sample_inst/n58_9 ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/down_out [0])
+);
+defparam \CIC_Filter/down_sample_inst/buffer_out_0_s0 .INIT=1'b0;
+LUT1 \CIC_Filter/down_sample_inst/n22_s4  (
+	.I0(\CIC_Filter/down_sample_inst/cnt [0]),
+	.F(\CIC_Filter/down_sample_inst/n22_10 )
+);
+defparam \CIC_Filter/down_sample_inst/n22_s4 .INIT=2'h1;
+DFFC \CIC_Filter/comb[0].comb_inst/out_valid_s0  (
+	.D(\CIC_Filter/down_vaild ),
+	.CLK(clk),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb_vaild [0])
+);
+defparam \CIC_Filter/comb[0].comb_inst/out_valid_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_47_s0  (
+	.D(\CIC_Filter/down_out [47]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [47])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_47_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_46_s0  (
+	.D(\CIC_Filter/down_out [46]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [46])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_46_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_45_s0  (
+	.D(\CIC_Filter/down_out [45]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [45])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_45_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_44_s0  (
+	.D(\CIC_Filter/down_out [44]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [44])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_44_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_43_s0  (
+	.D(\CIC_Filter/down_out [43]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [43])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_43_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_42_s0  (
+	.D(\CIC_Filter/down_out [42]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [42])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_42_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_41_s0  (
+	.D(\CIC_Filter/down_out [41]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [41])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_41_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_40_s0  (
+	.D(\CIC_Filter/down_out [40]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [40])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_40_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_39_s0  (
+	.D(\CIC_Filter/down_out [39]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [39])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_39_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_38_s0  (
+	.D(\CIC_Filter/down_out [38]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [38])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_38_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_37_s0  (
+	.D(\CIC_Filter/down_out [37]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [37])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_37_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_36_s0  (
+	.D(\CIC_Filter/down_out [36]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [36])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_36_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_35_s0  (
+	.D(\CIC_Filter/down_out [35]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [35])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_35_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_34_s0  (
+	.D(\CIC_Filter/down_out [34]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [34])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_34_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_33_s0  (
+	.D(\CIC_Filter/down_out [33]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [33])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_33_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_32_s0  (
+	.D(\CIC_Filter/down_out [32]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [32])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_32_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_31_s0  (
+	.D(\CIC_Filter/down_out [31]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [31])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_31_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_30_s0  (
+	.D(\CIC_Filter/down_out [30]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [30])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_30_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_29_s0  (
+	.D(\CIC_Filter/down_out [29]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [29])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_29_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_28_s0  (
+	.D(\CIC_Filter/down_out [28]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [28])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_28_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_27_s0  (
+	.D(\CIC_Filter/down_out [27]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [27])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_27_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_26_s0  (
+	.D(\CIC_Filter/down_out [26]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [26])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_26_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_25_s0  (
+	.D(\CIC_Filter/down_out [25]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [25])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_25_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_24_s0  (
+	.D(\CIC_Filter/down_out [24]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [24])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_24_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_23_s0  (
+	.D(\CIC_Filter/down_out [23]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [23])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_23_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_22_s0  (
+	.D(\CIC_Filter/down_out [22]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [22])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_22_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_21_s0  (
+	.D(\CIC_Filter/down_out [21]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [21])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_21_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_20_s0  (
+	.D(\CIC_Filter/down_out [20]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [20])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_20_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_19_s0  (
+	.D(\CIC_Filter/down_out [19]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [19])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_19_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_18_s0  (
+	.D(\CIC_Filter/down_out [18]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [18])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_18_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_17_s0  (
+	.D(\CIC_Filter/down_out [17]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [17])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_17_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_16_s0  (
+	.D(\CIC_Filter/down_out [16]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [16])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_16_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_15_s0  (
+	.D(\CIC_Filter/down_out [15]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [15])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_15_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_14_s0  (
+	.D(\CIC_Filter/down_out [14]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [14])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_14_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_13_s0  (
+	.D(\CIC_Filter/down_out [13]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [13])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_13_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_12_s0  (
+	.D(\CIC_Filter/down_out [12]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [12])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_12_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_11_s0  (
+	.D(\CIC_Filter/down_out [11]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [11])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_11_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_10_s0  (
+	.D(\CIC_Filter/down_out [10]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [10])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_10_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_9_s0  (
+	.D(\CIC_Filter/down_out [9]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [9])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_9_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_8_s0  (
+	.D(\CIC_Filter/down_out [8]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [8])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_8_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_7_s0  (
+	.D(\CIC_Filter/down_out [7]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [7])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_7_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_6_s0  (
+	.D(\CIC_Filter/down_out [6]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [6])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_6_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_5_s0  (
+	.D(\CIC_Filter/down_out [5]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [5])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_5_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_4_s0  (
+	.D(\CIC_Filter/down_out [4]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [4])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_4_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_3_s0  (
+	.D(\CIC_Filter/down_out [3]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [3])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_3_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_2_s0  (
+	.D(\CIC_Filter/down_out [2]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [2])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_2_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_1_s0  (
+	.D(\CIC_Filter/down_out [1]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [1])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_1_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[0].comb_inst/buff_delay[0]_0_s0  (
+	.D(\CIC_Filter/down_out [0]),
+	.CLK(clk),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[0].comb_inst/buff_delay[0] [0])
+);
+defparam \CIC_Filter/comb[0].comb_inst/buff_delay[0]_0_s0 .INIT=1'b0;
+ALU54D \CIC_Filter/comb[0].comb_inst/add_54_s2  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(\CIC_Filter/down_vaild ),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/down_out [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb[0].comb_inst/buff_delay[0] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/comb[0].comb_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/comb[0].comb_inst/DOUT [53:48], \CIC_Filter/comb_data[0] [47:0]})
+);
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .AREG=1'b0;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .BREG=1'b1;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .OUT_REG=1'b1;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .B_ADD_SUB=1'b1;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .ALUD_MODE=0;
+defparam \CIC_Filter/comb[0].comb_inst/add_54_s2 .ALU_RESET_MODE="ASYNC";
+DFFC \CIC_Filter/comb[1].comb_inst/out_valid_s0  (
+	.D(\CIC_Filter/comb_vaild [0]),
+	.CLK(clk),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb_vaild_0 [1])
+);
+defparam \CIC_Filter/comb[1].comb_inst/out_valid_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_47_s0  (
+	.D(\CIC_Filter/comb_data[0] [47]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [47])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_47_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_46_s0  (
+	.D(\CIC_Filter/comb_data[0] [46]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [46])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_46_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_45_s0  (
+	.D(\CIC_Filter/comb_data[0] [45]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [45])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_45_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_44_s0  (
+	.D(\CIC_Filter/comb_data[0] [44]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [44])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_44_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_43_s0  (
+	.D(\CIC_Filter/comb_data[0] [43]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [43])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_43_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_42_s0  (
+	.D(\CIC_Filter/comb_data[0] [42]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [42])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_42_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_41_s0  (
+	.D(\CIC_Filter/comb_data[0] [41]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [41])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_41_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_40_s0  (
+	.D(\CIC_Filter/comb_data[0] [40]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [40])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_40_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_39_s0  (
+	.D(\CIC_Filter/comb_data[0] [39]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [39])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_39_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_38_s0  (
+	.D(\CIC_Filter/comb_data[0] [38]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [38])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_38_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_37_s0  (
+	.D(\CIC_Filter/comb_data[0] [37]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [37])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_37_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_36_s0  (
+	.D(\CIC_Filter/comb_data[0] [36]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [36])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_36_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_35_s0  (
+	.D(\CIC_Filter/comb_data[0] [35]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [35])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_35_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_34_s0  (
+	.D(\CIC_Filter/comb_data[0] [34]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [34])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_34_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_33_s0  (
+	.D(\CIC_Filter/comb_data[0] [33]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [33])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_33_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_32_s0  (
+	.D(\CIC_Filter/comb_data[0] [32]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [32])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_32_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_31_s0  (
+	.D(\CIC_Filter/comb_data[0] [31]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [31])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_31_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_30_s0  (
+	.D(\CIC_Filter/comb_data[0] [30]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [30])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_30_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_29_s0  (
+	.D(\CIC_Filter/comb_data[0] [29]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [29])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_29_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_28_s0  (
+	.D(\CIC_Filter/comb_data[0] [28]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [28])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_28_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_27_s0  (
+	.D(\CIC_Filter/comb_data[0] [27]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [27])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_27_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_26_s0  (
+	.D(\CIC_Filter/comb_data[0] [26]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [26])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_26_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_25_s0  (
+	.D(\CIC_Filter/comb_data[0] [25]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [25])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_25_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_24_s0  (
+	.D(\CIC_Filter/comb_data[0] [24]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [24])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_24_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_23_s0  (
+	.D(\CIC_Filter/comb_data[0] [23]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [23])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_23_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_22_s0  (
+	.D(\CIC_Filter/comb_data[0] [22]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [22])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_22_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_21_s0  (
+	.D(\CIC_Filter/comb_data[0] [21]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [21])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_21_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_20_s0  (
+	.D(\CIC_Filter/comb_data[0] [20]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [20])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_20_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_19_s0  (
+	.D(\CIC_Filter/comb_data[0] [19]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [19])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_19_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_18_s0  (
+	.D(\CIC_Filter/comb_data[0] [18]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [18])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_18_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_17_s0  (
+	.D(\CIC_Filter/comb_data[0] [17]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [17])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_17_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_16_s0  (
+	.D(\CIC_Filter/comb_data[0] [16]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [16])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_16_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_15_s0  (
+	.D(\CIC_Filter/comb_data[0] [15]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [15])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_15_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_14_s0  (
+	.D(\CIC_Filter/comb_data[0] [14]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [14])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_14_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_13_s0  (
+	.D(\CIC_Filter/comb_data[0] [13]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [13])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_13_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_12_s0  (
+	.D(\CIC_Filter/comb_data[0] [12]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [12])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_12_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_11_s0  (
+	.D(\CIC_Filter/comb_data[0] [11]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [11])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_11_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_10_s0  (
+	.D(\CIC_Filter/comb_data[0] [10]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [10])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_10_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_9_s0  (
+	.D(\CIC_Filter/comb_data[0] [9]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [9])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_9_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_8_s0  (
+	.D(\CIC_Filter/comb_data[0] [8]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [8])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_8_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_7_s0  (
+	.D(\CIC_Filter/comb_data[0] [7]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [7])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_7_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_6_s0  (
+	.D(\CIC_Filter/comb_data[0] [6]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [6])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_6_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_5_s0  (
+	.D(\CIC_Filter/comb_data[0] [5]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [5])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_5_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_4_s0  (
+	.D(\CIC_Filter/comb_data[0] [4]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [4])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_4_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_3_s0  (
+	.D(\CIC_Filter/comb_data[0] [3]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [3])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_3_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_2_s0  (
+	.D(\CIC_Filter/comb_data[0] [2]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [2])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_2_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_1_s0  (
+	.D(\CIC_Filter/comb_data[0] [1]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [1])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_1_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[1].comb_inst/buff_delay[0]_0_s0  (
+	.D(\CIC_Filter/comb_data[0] [0]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[1].comb_inst/buff_delay[0] [0])
+);
+defparam \CIC_Filter/comb[1].comb_inst/buff_delay[0]_0_s0 .INIT=1'b0;
+ALU54D \CIC_Filter/comb[1].comb_inst/add_54_s2  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(\CIC_Filter/comb_vaild [0]),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb_data[0] [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb[1].comb_inst/buff_delay[0] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/comb[1].comb_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/comb[1].comb_inst/DOUT [53:48], \CIC_Filter/comb_data[1] [47:0]})
+);
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .AREG=1'b0;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .BREG=1'b1;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .OUT_REG=1'b1;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .B_ADD_SUB=1'b1;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .ALUD_MODE=0;
+defparam \CIC_Filter/comb[1].comb_inst/add_54_s2 .ALU_RESET_MODE="ASYNC";
+DFFC \CIC_Filter/comb[2].comb_inst/out_valid_s0  (
+	.D(\CIC_Filter/comb_vaild_0 [1]),
+	.CLK(clk),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb_vaild_1 [2])
+);
+defparam \CIC_Filter/comb[2].comb_inst/out_valid_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_47_s0  (
+	.D(\CIC_Filter/comb_data[1] [47]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [47])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_47_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_46_s0  (
+	.D(\CIC_Filter/comb_data[1] [46]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [46])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_46_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_45_s0  (
+	.D(\CIC_Filter/comb_data[1] [45]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [45])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_45_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_44_s0  (
+	.D(\CIC_Filter/comb_data[1] [44]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [44])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_44_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_43_s0  (
+	.D(\CIC_Filter/comb_data[1] [43]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [43])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_43_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_42_s0  (
+	.D(\CIC_Filter/comb_data[1] [42]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [42])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_42_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_41_s0  (
+	.D(\CIC_Filter/comb_data[1] [41]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [41])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_41_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_40_s0  (
+	.D(\CIC_Filter/comb_data[1] [40]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [40])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_40_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_39_s0  (
+	.D(\CIC_Filter/comb_data[1] [39]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [39])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_39_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_38_s0  (
+	.D(\CIC_Filter/comb_data[1] [38]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [38])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_38_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_37_s0  (
+	.D(\CIC_Filter/comb_data[1] [37]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [37])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_37_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_36_s0  (
+	.D(\CIC_Filter/comb_data[1] [36]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [36])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_36_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_35_s0  (
+	.D(\CIC_Filter/comb_data[1] [35]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [35])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_35_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_34_s0  (
+	.D(\CIC_Filter/comb_data[1] [34]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [34])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_34_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_33_s0  (
+	.D(\CIC_Filter/comb_data[1] [33]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [33])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_33_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_32_s0  (
+	.D(\CIC_Filter/comb_data[1] [32]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [32])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_32_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_31_s0  (
+	.D(\CIC_Filter/comb_data[1] [31]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [31])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_31_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_30_s0  (
+	.D(\CIC_Filter/comb_data[1] [30]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [30])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_30_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_29_s0  (
+	.D(\CIC_Filter/comb_data[1] [29]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [29])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_29_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_28_s0  (
+	.D(\CIC_Filter/comb_data[1] [28]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [28])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_28_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_27_s0  (
+	.D(\CIC_Filter/comb_data[1] [27]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [27])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_27_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_26_s0  (
+	.D(\CIC_Filter/comb_data[1] [26]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [26])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_26_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_25_s0  (
+	.D(\CIC_Filter/comb_data[1] [25]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [25])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_25_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_24_s0  (
+	.D(\CIC_Filter/comb_data[1] [24]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [24])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_24_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_23_s0  (
+	.D(\CIC_Filter/comb_data[1] [23]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [23])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_23_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_22_s0  (
+	.D(\CIC_Filter/comb_data[1] [22]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [22])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_22_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_21_s0  (
+	.D(\CIC_Filter/comb_data[1] [21]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [21])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_21_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_20_s0  (
+	.D(\CIC_Filter/comb_data[1] [20]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [20])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_20_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_19_s0  (
+	.D(\CIC_Filter/comb_data[1] [19]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [19])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_19_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_18_s0  (
+	.D(\CIC_Filter/comb_data[1] [18]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [18])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_18_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_17_s0  (
+	.D(\CIC_Filter/comb_data[1] [17]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [17])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_17_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_16_s0  (
+	.D(\CIC_Filter/comb_data[1] [16]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [16])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_16_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_15_s0  (
+	.D(\CIC_Filter/comb_data[1] [15]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [15])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_15_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_14_s0  (
+	.D(\CIC_Filter/comb_data[1] [14]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [14])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_14_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_13_s0  (
+	.D(\CIC_Filter/comb_data[1] [13]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [13])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_13_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_12_s0  (
+	.D(\CIC_Filter/comb_data[1] [12]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [12])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_12_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_11_s0  (
+	.D(\CIC_Filter/comb_data[1] [11]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [11])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_11_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_10_s0  (
+	.D(\CIC_Filter/comb_data[1] [10]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [10])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_10_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_9_s0  (
+	.D(\CIC_Filter/comb_data[1] [9]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [9])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_9_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_8_s0  (
+	.D(\CIC_Filter/comb_data[1] [8]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [8])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_8_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_7_s0  (
+	.D(\CIC_Filter/comb_data[1] [7]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [7])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_7_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_6_s0  (
+	.D(\CIC_Filter/comb_data[1] [6]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [6])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_6_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_5_s0  (
+	.D(\CIC_Filter/comb_data[1] [5]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [5])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_5_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_4_s0  (
+	.D(\CIC_Filter/comb_data[1] [4]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [4])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_4_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_3_s0  (
+	.D(\CIC_Filter/comb_data[1] [3]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [3])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_3_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_2_s0  (
+	.D(\CIC_Filter/comb_data[1] [2]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [2])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_2_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_1_s0  (
+	.D(\CIC_Filter/comb_data[1] [1]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [1])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_1_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[2].comb_inst/buff_delay[0]_0_s0  (
+	.D(\CIC_Filter/comb_data[1] [0]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[2].comb_inst/buff_delay[0] [0])
+);
+defparam \CIC_Filter/comb[2].comb_inst/buff_delay[0]_0_s0 .INIT=1'b0;
+ALU54D \CIC_Filter/comb[2].comb_inst/add_54_s2  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(\CIC_Filter/comb_vaild_0 [1]),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb_data[1] [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb[2].comb_inst/buff_delay[0] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/comb[2].comb_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/comb[2].comb_inst/DOUT [53:48], \CIC_Filter/comb_data[2] [47:0]})
+);
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .AREG=1'b0;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .BREG=1'b1;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .OUT_REG=1'b1;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .B_ADD_SUB=1'b1;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .ALUD_MODE=0;
+defparam \CIC_Filter/comb[2].comb_inst/add_54_s2 .ALU_RESET_MODE="ASYNC";
+DFFC \CIC_Filter/comb[3].comb_inst/out_valid_s0  (
+	.D(\CIC_Filter/comb_vaild_1 [2]),
+	.CLK(clk),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb_vaild_2 [3])
+);
+defparam \CIC_Filter/comb[3].comb_inst/out_valid_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_47_s0  (
+	.D(\CIC_Filter/comb_data[2] [47]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [47])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_47_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_46_s0  (
+	.D(\CIC_Filter/comb_data[2] [46]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [46])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_46_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_45_s0  (
+	.D(\CIC_Filter/comb_data[2] [45]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [45])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_45_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_44_s0  (
+	.D(\CIC_Filter/comb_data[2] [44]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [44])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_44_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_43_s0  (
+	.D(\CIC_Filter/comb_data[2] [43]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [43])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_43_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_42_s0  (
+	.D(\CIC_Filter/comb_data[2] [42]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [42])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_42_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_41_s0  (
+	.D(\CIC_Filter/comb_data[2] [41]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [41])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_41_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_40_s0  (
+	.D(\CIC_Filter/comb_data[2] [40]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [40])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_40_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_39_s0  (
+	.D(\CIC_Filter/comb_data[2] [39]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [39])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_39_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_38_s0  (
+	.D(\CIC_Filter/comb_data[2] [38]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [38])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_38_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_37_s0  (
+	.D(\CIC_Filter/comb_data[2] [37]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [37])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_37_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_36_s0  (
+	.D(\CIC_Filter/comb_data[2] [36]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [36])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_36_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_35_s0  (
+	.D(\CIC_Filter/comb_data[2] [35]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [35])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_35_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_34_s0  (
+	.D(\CIC_Filter/comb_data[2] [34]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [34])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_34_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_33_s0  (
+	.D(\CIC_Filter/comb_data[2] [33]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [33])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_33_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_32_s0  (
+	.D(\CIC_Filter/comb_data[2] [32]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [32])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_32_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_31_s0  (
+	.D(\CIC_Filter/comb_data[2] [31]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [31])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_31_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_30_s0  (
+	.D(\CIC_Filter/comb_data[2] [30]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [30])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_30_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_29_s0  (
+	.D(\CIC_Filter/comb_data[2] [29]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [29])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_29_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_28_s0  (
+	.D(\CIC_Filter/comb_data[2] [28]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [28])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_28_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_27_s0  (
+	.D(\CIC_Filter/comb_data[2] [27]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [27])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_27_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_26_s0  (
+	.D(\CIC_Filter/comb_data[2] [26]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [26])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_26_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_25_s0  (
+	.D(\CIC_Filter/comb_data[2] [25]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [25])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_25_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_24_s0  (
+	.D(\CIC_Filter/comb_data[2] [24]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [24])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_24_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_23_s0  (
+	.D(\CIC_Filter/comb_data[2] [23]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [23])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_23_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_22_s0  (
+	.D(\CIC_Filter/comb_data[2] [22]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [22])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_22_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_21_s0  (
+	.D(\CIC_Filter/comb_data[2] [21]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [21])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_21_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_20_s0  (
+	.D(\CIC_Filter/comb_data[2] [20]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [20])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_20_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_19_s0  (
+	.D(\CIC_Filter/comb_data[2] [19]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [19])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_19_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_18_s0  (
+	.D(\CIC_Filter/comb_data[2] [18]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [18])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_18_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_17_s0  (
+	.D(\CIC_Filter/comb_data[2] [17]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [17])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_17_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_16_s0  (
+	.D(\CIC_Filter/comb_data[2] [16]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [16])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_16_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_15_s0  (
+	.D(\CIC_Filter/comb_data[2] [15]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [15])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_15_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_14_s0  (
+	.D(\CIC_Filter/comb_data[2] [14]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [14])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_14_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_13_s0  (
+	.D(\CIC_Filter/comb_data[2] [13]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [13])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_13_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_12_s0  (
+	.D(\CIC_Filter/comb_data[2] [12]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [12])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_12_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_11_s0  (
+	.D(\CIC_Filter/comb_data[2] [11]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [11])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_11_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_10_s0  (
+	.D(\CIC_Filter/comb_data[2] [10]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [10])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_10_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_9_s0  (
+	.D(\CIC_Filter/comb_data[2] [9]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [9])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_9_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_8_s0  (
+	.D(\CIC_Filter/comb_data[2] [8]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [8])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_8_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_7_s0  (
+	.D(\CIC_Filter/comb_data[2] [7]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [7])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_7_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_6_s0  (
+	.D(\CIC_Filter/comb_data[2] [6]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [6])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_6_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_5_s0  (
+	.D(\CIC_Filter/comb_data[2] [5]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [5])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_5_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_4_s0  (
+	.D(\CIC_Filter/comb_data[2] [4]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [4])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_4_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_3_s0  (
+	.D(\CIC_Filter/comb_data[2] [3]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [3])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_3_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_2_s0  (
+	.D(\CIC_Filter/comb_data[2] [2]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [2])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_2_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_1_s0  (
+	.D(\CIC_Filter/comb_data[2] [1]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [1])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_1_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[3].comb_inst/buff_delay[0]_0_s0  (
+	.D(\CIC_Filter/comb_data[2] [0]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[3].comb_inst/buff_delay[0] [0])
+);
+defparam \CIC_Filter/comb[3].comb_inst/buff_delay[0]_0_s0 .INIT=1'b0;
+ALU54D \CIC_Filter/comb[3].comb_inst/add_54_s2  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(\CIC_Filter/comb_vaild_1 [2]),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb_data[2] [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb[3].comb_inst/buff_delay[0] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/comb[3].comb_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/comb[3].comb_inst/DOUT [53:48], \CIC_Filter/comb_data[3] [47:0]})
+);
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .AREG=1'b0;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .BREG=1'b1;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .OUT_REG=1'b1;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .B_ADD_SUB=1'b1;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .ALUD_MODE=0;
+defparam \CIC_Filter/comb[3].comb_inst/add_54_s2 .ALU_RESET_MODE="ASYNC";
+DFFC \CIC_Filter/comb[4].comb_inst/out_valid_s0  (
+	.D(\CIC_Filter/comb_vaild_2 [3]),
+	.CLK(clk),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(out_valid)
+);
+defparam \CIC_Filter/comb[4].comb_inst/out_valid_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_47_s0  (
+	.D(\CIC_Filter/comb_data[3] [47]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [47])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_47_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_46_s0  (
+	.D(\CIC_Filter/comb_data[3] [46]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [46])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_46_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_45_s0  (
+	.D(\CIC_Filter/comb_data[3] [45]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [45])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_45_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_44_s0  (
+	.D(\CIC_Filter/comb_data[3] [44]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [44])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_44_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_43_s0  (
+	.D(\CIC_Filter/comb_data[3] [43]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [43])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_43_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_42_s0  (
+	.D(\CIC_Filter/comb_data[3] [42]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [42])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_42_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_41_s0  (
+	.D(\CIC_Filter/comb_data[3] [41]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [41])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_41_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_40_s0  (
+	.D(\CIC_Filter/comb_data[3] [40]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [40])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_40_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_39_s0  (
+	.D(\CIC_Filter/comb_data[3] [39]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [39])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_39_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_38_s0  (
+	.D(\CIC_Filter/comb_data[3] [38]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [38])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_38_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_37_s0  (
+	.D(\CIC_Filter/comb_data[3] [37]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [37])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_37_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_36_s0  (
+	.D(\CIC_Filter/comb_data[3] [36]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [36])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_36_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_35_s0  (
+	.D(\CIC_Filter/comb_data[3] [35]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [35])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_35_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_34_s0  (
+	.D(\CIC_Filter/comb_data[3] [34]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [34])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_34_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_33_s0  (
+	.D(\CIC_Filter/comb_data[3] [33]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [33])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_33_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_32_s0  (
+	.D(\CIC_Filter/comb_data[3] [32]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [32])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_32_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_31_s0  (
+	.D(\CIC_Filter/comb_data[3] [31]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [31])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_31_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_30_s0  (
+	.D(\CIC_Filter/comb_data[3] [30]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [30])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_30_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_29_s0  (
+	.D(\CIC_Filter/comb_data[3] [29]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [29])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_29_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_28_s0  (
+	.D(\CIC_Filter/comb_data[3] [28]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [28])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_28_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_27_s0  (
+	.D(\CIC_Filter/comb_data[3] [27]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [27])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_27_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_26_s0  (
+	.D(\CIC_Filter/comb_data[3] [26]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [26])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_26_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_25_s0  (
+	.D(\CIC_Filter/comb_data[3] [25]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [25])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_25_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_24_s0  (
+	.D(\CIC_Filter/comb_data[3] [24]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [24])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_24_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_23_s0  (
+	.D(\CIC_Filter/comb_data[3] [23]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [23])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_23_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_22_s0  (
+	.D(\CIC_Filter/comb_data[3] [22]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [22])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_22_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_21_s0  (
+	.D(\CIC_Filter/comb_data[3] [21]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [21])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_21_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_20_s0  (
+	.D(\CIC_Filter/comb_data[3] [20]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [20])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_20_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_19_s0  (
+	.D(\CIC_Filter/comb_data[3] [19]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [19])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_19_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_18_s0  (
+	.D(\CIC_Filter/comb_data[3] [18]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [18])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_18_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_17_s0  (
+	.D(\CIC_Filter/comb_data[3] [17]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [17])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_17_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_16_s0  (
+	.D(\CIC_Filter/comb_data[3] [16]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [16])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_16_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_15_s0  (
+	.D(\CIC_Filter/comb_data[3] [15]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [15])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_15_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_14_s0  (
+	.D(\CIC_Filter/comb_data[3] [14]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [14])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_14_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_13_s0  (
+	.D(\CIC_Filter/comb_data[3] [13]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [13])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_13_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_12_s0  (
+	.D(\CIC_Filter/comb_data[3] [12]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [12])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_12_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_11_s0  (
+	.D(\CIC_Filter/comb_data[3] [11]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [11])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_11_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_10_s0  (
+	.D(\CIC_Filter/comb_data[3] [10]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [10])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_10_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_9_s0  (
+	.D(\CIC_Filter/comb_data[3] [9]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [9])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_9_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_8_s0  (
+	.D(\CIC_Filter/comb_data[3] [8]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [8])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_8_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_7_s0  (
+	.D(\CIC_Filter/comb_data[3] [7]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [7])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_7_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_6_s0  (
+	.D(\CIC_Filter/comb_data[3] [6]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [6])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_6_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_5_s0  (
+	.D(\CIC_Filter/comb_data[3] [5]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [5])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_5_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_4_s0  (
+	.D(\CIC_Filter/comb_data[3] [4]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [4])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_4_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_3_s0  (
+	.D(\CIC_Filter/comb_data[3] [3]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [3])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_3_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_2_s0  (
+	.D(\CIC_Filter/comb_data[3] [2]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [2])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_2_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_1_s0  (
+	.D(\CIC_Filter/comb_data[3] [1]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [1])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_1_s0 .INIT=1'b0;
+DFFCE \CIC_Filter/comb[4].comb_inst/buff_delay[0]_0_s0  (
+	.D(\CIC_Filter/comb_data[3] [0]),
+	.CLK(clk),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLEAR(\CIC_Filter/n6_6 ),
+	.Q(\CIC_Filter/comb[4].comb_inst/buff_delay[0] [0])
+);
+defparam \CIC_Filter/comb[4].comb_inst/buff_delay[0]_0_s0 .INIT=1'b0;
+ALU54D \CIC_Filter/comb[4].comb_inst/add_54_s2  (
+	.ASIGN(GND),
+	.BSIGN(GND),
+	.ACCLOAD(GND),
+	.CE(\CIC_Filter/comb_vaild_2 [3]),
+	.CLK(clk),
+	.RESET(\CIC_Filter/n6_6 ),
+	.A({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb_data[3] [47:0]}),
+	.B({GND, GND, GND, GND, GND, GND, \CIC_Filter/comb[4].comb_inst/buff_delay[0] [47:0]}),
+	.CASI({GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND, GND}),
+	.CASO({\CIC_Filter/comb[4].comb_inst/CASO [54:0]}),
+	.DOUT({\CIC_Filter/comb[4].comb_inst/DOUT [53:48], out_data[47:0]})
+);
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .AREG=1'b0;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .BREG=1'b1;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .OUT_REG=1'b1;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .ASIGN_REG=1'b0;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .BSIGN_REG=1'b0;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .B_ADD_SUB=1'b1;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .C_ADD_SUB=1'b0;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .ACCLOAD_REG=1'b0;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .ALUD_MODE=0;
+defparam \CIC_Filter/comb[4].comb_inst/add_54_s2 .ALU_RESET_MODE="ASYNC";
+endmodule

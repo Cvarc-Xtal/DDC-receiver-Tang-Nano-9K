@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
+    <FileList>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/cic.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/clip_led.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/cordic_rx.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/firx8x8.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv/gowin_clkdiv5.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/gowin_clkdiv_4/gowin_clkdiv_4.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/gowin_prom/gowin_prom_2048.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/i2c_control.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/i2s.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/reciever.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/top_rx.v" type="verilog"/>
+        <File path="/home/tvl/Gowin/Projects/reciever/src/varcic.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_balance" value="1"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="/home/tvl/Gowin/Projects/reciever/impl/gwsynthesis/reciever.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="top_module" value="Top_rx"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>
